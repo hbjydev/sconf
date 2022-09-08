@@ -1,0 +1,21 @@
+---
+apiVersion: nodes.sconfd.io/v1alpha1
+kind: Node
+metadata:
+  name: server1
+  labels:
+    k4n.io/location: london
+    k4n.io/owned-by: operations
+spec:
+  platform: el9 # server runs Enterprise Linux 9
+
+  packages:
+    # List of packages to ensure are installed
+    installed:
+      - net-tools
+      - dnf-automatic
+    
+    # List of packages to prevent installation of
+    uninstalled:
+      - curl
+
